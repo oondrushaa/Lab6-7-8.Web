@@ -1,0 +1,133 @@
+/* Базові стилі */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f6f6f6;
+    line-height: 1.5;
+}
+
+header {
+    background: #2f6ace;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.label {
+    font-weight: bold;
+    color: lightyellow;
+}
+
+.field-name {
+    font-weight: bold;
+    color: #2a2a2a;
+    display: inline-block;
+}
+
+.task, #result {
+    margin: 1.5rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+/* Кнопка */
+button {
+    padding: 0.8rem 1.5rem;
+    background: #2f6ace;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #1f4fa3;
+}
+
+/* Виставки */
+.ex-item {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 6px solid #2f6ace;
+    background: #f0f4ff;
+    border-radius: 5px;
+}
+
+.today {
+    background: #fff3cd;
+    border-left-color: #ffbf00;
+}
+
+.expired {
+    background: #ffd6d6;
+    border-left-color: #ff0000;
+}
+
+.no-org {
+    color: #b30000;
+    font-weight: bold;
+}
+
+@media (max-width: 900px) {
+    .task, #result {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .task, #result {
+        margin: 0.5rem;
+        padding: 0.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .ex-item {
+        padding: 0.8rem;
+    }
+
+    button {
+        font-size: 0.95rem;
+        padding: 0.7rem;
+    }
+}
