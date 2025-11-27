@@ -1,17 +1,28 @@
-/* Базові стилі */
+/* ===================== БАЗОВІ СТИЛІ ===================== */
+:root {
+    --green-dark: #2f7b3a;
+    --green: #4caf50;
+    --green-light: #dff5e1;
+    --green-hover: #3e9147;
+    --border-color: #b6d8ba;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f6f6f6;
+    background: #f3faf4;
+    color: #1c2b1e;
     line-height: 1.5;
 }
 
+/* ===================== ШАПКА ===================== */
 header {
-    background: #2f6ace;
+    background: var(--green-dark);
     color: white;
     padding: 2rem 1rem;
     text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
 
 header h1 {
@@ -21,65 +32,86 @@ header h1 {
 
 .label {
     font-weight: bold;
-    color: lightyellow;
+    color: #c9ffd1;
 }
 
-.field-name {
+/* ===================== МЕНЮ ===================== */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.2rem 0;
+}
+
+.menu a {
+    text-decoration: none;
+    padding: 0.7rem 1.4rem;
+    background: var(--green);
+    color: white;
+    border-radius: 8px;
     font-weight: bold;
-    color: #2a2a2a;
-    display: inline-block;
+    transition: 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 
+.menu a:hover {
+    background: var(--green-hover);
+}
+
+.menu a.active {
+    background: var(--green-dark);
+}
+
+/* ===================== БЛОКИ ===================== */
 .task, #result {
     margin: 1.5rem;
     background: white;
     padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     margin-bottom: 1rem;
+    color: var(--green-dark);
 }
 
-ul {
-    padding-left: 1.5rem;
-}
-
-/* Кнопка */
+/* ===================== КНОПКИ ===================== */
 button {
     padding: 0.8rem 1.5rem;
-    background: #2f6ace;
+    background: var(--green);
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background 0.3s ease;
+    transition: 0.3s;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
 button:hover {
-    background: #1f4fa3;
+    background: var(--green-hover);
 }
 
-/* Виставки */
+/* ===================== ЛР6 — ВИСТАВКИ ===================== */
 .ex-item {
     padding: 1rem;
     margin-bottom: 1rem;
-    border-left: 6px solid #2f6ace;
-    background: #f0f4ff;
-    border-radius: 5px;
+    border-left: 6px solid var(--green);
+    background: var(--green-light);
+    border-radius: 6px;
 }
 
 .today {
-    background: #fff3cd;
-    border-left-color: #ffbf00;
+    background: #fffdd0;
+    border-left-color: #eab308;
 }
 
 .expired {
-    background: #ffd6d6;
-    border-left-color: #ff0000;
+    background: #ffe0e0;
+    border-left-color: #ff3333;
 }
 
 .no-org {
@@ -87,47 +119,84 @@ button:hover {
     font-weight: bold;
 }
 
-@media (max-width: 900px) {
-    .task, #result {
-        margin: 1rem;
-        padding: 1rem;
-    }
+/* ===================== ЛР7 — Текстові прямокутники ===================== */
+.sample {
+    padding: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid var(--green);
+    margin-bottom: 0.6rem;
+    background: #f5fff6;
+}
 
-    header h1 {
-        font-size: 1.7rem;
-    }
+.sample.modified {
+    background: #dff5e1;
+}
 
+/* ===================== ТАБЛИЦЯ (ЛР7) ===================== */
+.num-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.num-table th,
+.num-table td {
+    border: 2px solid var(--border-color);
+    padding: 0.6rem;
+    text-align: center;
+    background: white;
+}
+
+.num-table th {
+    background: var(--green);
+    color: white;
+    font-size: 1.1rem;
+}
+
+.num-table td:hover {
+    background: #eefbee;
+    cursor: pointer;
+}
+
+/* ===================== ЛР8 ===================== */
+.input-block {
+    display: grid;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+}
+
+.input-block input {
+    padding: 0.6rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f8fff8;
+    transition: 0.2s;
+}
+
+.input-block input:focus {
+    border-color: var(--green);
+    outline: none;
+    box-shadow: 0 0 5px rgba(76,175,80,0.4);
+}
+
+
+/* ===================== АДАПТИВ ===================== */
+@media (max-width: 850px) {
+    .menu {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
     button {
         width: 100%;
-        font-size: 1rem;
-        padding: 0.8rem;
     }
 }
 
 @media (max-width: 600px) {
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
-
-    header p {
-        font-size: 0.9rem;
-    }
-
-    .task, #result {
-        margin: 0.5rem;
-        padding: 0.8rem;
-    }
-
-    h2 {
-        font-size: 1.3rem;
-    }
-
-    .ex-item {
-        padding: 0.8rem;
-    }
-
-    button {
-        font-size: 0.95rem;
-        padding: 0.7rem;
+    .task {
+        padding: 1rem;
     }
 }

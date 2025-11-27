@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Лабораторна робота №8 — Варіант 5</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script8.js" defer></script>
+</head>
+<body class="lab8">
+
+<header>
+  <h1>Лабораторна робота №8 – Основи ООП</h1>
+  <p><span class="label">Виконав:</span> студент Запека Андрій Сергійович</p>
+  <p><span class="label">Група:</span> АнД-31</p>
+  <p><span class="label">Варіант:</span> 5</p>
+</header>
+
+<nav class="menu">
+  <a href="index.html">ЛР6</a>
+  <a href="lab7.html">ЛР7</a>
+  <a href="lab8.html" class="active">ЛР8</a>
+</nav>
+
+<main>
+  <section class="task">
+    <h2>Завдання (Варіант 5)</h2>
+
+    <p>
+      <strong>Базовий клас:</strong> Поле (назва, r — вага насіння на одиницю площі)<br>
+      <strong>Метод:</strong> Урожай з одиниці площі: k · r<br><br>
+
+      <strong>Клас-нащадок:</strong> Картопляне (поле S — площа поля)<br>
+      <strong>Перевизначення:</strong> Знайти повний урожай з усього поля.
+    </p>
+
+    <h3>Введіть дані:</h3>
+
+    <div class="input-block">
+      <label>Назва поля:</label>
+      <input id="nameField" type="text">
+
+      <label>Вага насіння в грамах (кг/м²):</label>
+      <input id="rField" type="number" step="0.01">
+
+      <label>Коефіцієнт k:</label>
+      <input id="kField" type="number" step="0.01">
+
+      <label>Площа S (м²):</label>
+      <input id="sField" type="number" step="0.1">
+    </div>
+
+    <button onclick="calculate()">Обчислити урожай</button>
+
+  </section>
+
+  <section class="task" id="result">
+    <h2>Результат</h2>
+    <div id="output"></div>
+  </section>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Лабораторна робота №7 — Варіант 5</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script7.js" defer></script>
+</head>
+<body class="lab7">
+
+<header>
+  <h1>Лабораторна робота №7 — Основи моделі DOM та події</h1>
+  <p><span class="label">Виконав:</span> студент Запека Андрій Сергійович</p>
+  <p><span class="label">Група:</span> АнД-31</p>
+  <p><span class="label">Варіант:</span> 5</p>
+</header>
+
+<nav class="menu">
+  <a href="lab6.html">ЛР6</a>
+  <a href="lab7.html" class="active">ЛР7</a>
+  <a href="lab8.html">ЛР8</a>
+</nav>
+
+<main>
+  <section class="task">
+    <h2>Завдання 1</h2>
+    <p>Обійти всі блоки div і додати після закінчення тексту три крапки.</p>
+
+    <div class="sample">Це перший приклад тексту у диві</div>
+    <div class="sample">Короткий</div>
+    <div class="sample">Тут вже є три крапки...</div>
+
+    <div style="margin-top: 0.8rem;">
+      <button id="btnAddDots">Додати три крапки</button>
+    </div>
+
+  <section class="task">
+    <h2>Завдання 2</h2>
+    <p>Дана таблиця. При натисканні на комірку в ній з`являється поле 
+    введення з вмістом цієї комірки і кнопка "зберегти". Можна редагувати текст в
+    полі, зберегти - і текст комірки зміниться на той, що був в полі введення.</p>
+
+    <table id="editableTable" class="num-table">
+      <thead>
+        <tr><th>А</th><th>Б</th><th>В</th><th>Г</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Привіт</td><td>123</td><td>-5</td><td>Тест</td></tr>
+        <tr><td>Apple</td><td>0</td><td>42</td><td>Кінець</td></tr>
+        <tr><td>-7</td><td>Мова</td><td>Слово</td><td>9</td></tr>
+      </tbody>
+    </table>
+
+    <p id="msg"></p>
+  </section>
+</main>
+
+</body>
+</html>
