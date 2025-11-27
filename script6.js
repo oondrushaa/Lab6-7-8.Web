@@ -20,34 +20,22 @@ var exhibitions = [
     }
 ];
 
-// Функція для розрахунку різниці у днях
 function diffDays(start) {
-    var ONE_WEEK = 7; // Тривалість виставки
+    var ONE_WEEK = 7;
     var now = new Date();
     var startDate = new Date(start);
 
     var daysDiff = Math.floor((startDate - now) / (1000 * 60 * 60 * 24));
 
     if (daysDiff > 0) {
-        return {
-            status: "before",
-            daysBefore: daysDiff
-        };
+        return { status: "before", daysBefore: daysDiff };
     } else if (daysDiff <= 0 && daysDiff > -ONE_WEEK) {
-        return {
-            status: "running",
-            daysRunning: -daysDiff,
-            daysToEnd: ONE_WEEK + daysDiff
-        };
+        return { status: "running", daysRunning: -daysDiff, daysToEnd: ONE_WEEK + daysDiff };
     } else {
-        return {
-            status: "ended",
-            daysAfterEnd: -(daysDiff + ONE_WEEK)
-        };
+        return { status: "ended", daysAfterEnd: -(daysDiff + ONE_WEEK) };
     }
 }
 
-// Функція для створення HTML однієї виставки
 function createItem(ex) {
     var d = diffDays(ex.start);
     var cssClass = "ex-item";
@@ -56,10 +44,10 @@ function createItem(ex) {
     if (d.status === "before") {
         message = "До початку виставки залишилось " + d.daysBefore + " дн.";
     } else if (d.status === "running") {
-        cssClass += "today";
+        cssClass += " today";
         message = "Виставка триває. До завершення " + d.daysToEnd + " дн.";
     } else {
-        cssClass += "expired";
+        cssClass += " expired";
         message = "Виставка вже завершилась.";
     }
 
@@ -78,14 +66,10 @@ function createItem(ex) {
         "</div>";
 }
 
-// Головна функція для відображення виставок
 function showExhibitions() {
     var html = "";
-
     exhibitions.forEach(function(exhibition) {
         html += createItem(exhibition);
     });
-
-    var outputDiv = document.getElementById("output");
-    outputDiv.innerHTML = html;
+    document.getElementById("output").innerHTML = html;
 }
